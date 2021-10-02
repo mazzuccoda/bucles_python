@@ -27,11 +27,31 @@ sino que va hasta el anterior.
 print('Comenzamos a ponernos serios!')
 # Empezar aquí la resolución del ejercicio
 
-# inicio = ....
-# fin = ....
-
 # cantidad_numeros ....
 # sumatoria ....
+cantidad_numeros = 0
+sumatoria = 0
+lista = []
+
+inicio = int(input('Ingrese el primer número de la secuencia\n'))
+fin = int(input('Ingrese el último número de la secuencia\n'))
+
+for x in range(inicio,fin):
+    cantidad_numeros +=1
+    sumatoria += x
+    lista.append(x)
+
+promedio = sumatoria/cantidad_numeros
+
+print("Opción 1")
+print("La cantidad de numeros es: ", cantidad_numeros)
+print("la sumatoria es:", sumatoria)
+print("el promedio es:", promedio)
+
+print("Opción 2")
+print("La cantidad de numeros es: ", len(lista))
+print("la sumatoria es:", sum(lista))
+print("el promedio es:", sum(lista)/len(lista))
 
 # bucle.....
 

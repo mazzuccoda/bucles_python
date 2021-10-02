@@ -42,15 +42,53 @@ print("Mi organizador académico (#_#)")
 # Para calcular el promedio primero debe obtener la suma
 # de todas las notas, que irá almacenando en esta variable
 sumatoria = 0           # Ya le hemos inicializado en 0
-
 cantidad_notas = 0      # Aquí debe contar cuantas notas válidas encontró
 cantidad_ausentes = 0   # Aquí debe contar cuantos ausentes hubo
 
 # Realice aquí el bucle para recorrer todas las notas
 # y cacular la sumatoria
 
+for x in notas:
+    if x > 0: 
+        sumatoria += x
+        cantidad_notas += 1
+    else:
+        cantidad_ausentes += 1
 # Terminado el bucle calcule el promedio como
-# promedio = sumatoria / cantidad_notas
+promedio = sumatoria / cantidad_notas
+
+for y in range(len(notas)):
+    if notas[y] >= 90: 
+        notas[y] = "A"
+    elif notas[y] >= 80 and notas[y] < 90:
+        notas[y] = "B"
+    elif notas[y] >= 70 and notas[y] < 80:
+        notas[y] = "C"
+    elif notas[y] >= 60 and notas[y] < 70:
+        notas[y] = "D"
+    elif notas[y] < 60 and notas[y] >= 0:
+        notas[y] = "F"
+    else:
+        notas[y] = "Ausente"
+
+nota_final = None
+
+if promedio >= 90: 
+    nota_final = "A"
+elif promedio >= 80 and promedio < 90:
+    nota_final = "B"
+elif promedio >= 70 and promedio < 80:
+    nota_final = "C"
+elif promedio >= 60 and promedio < 70:
+    nota_final = "D"
+elif promedio < 60 and promedio >= 0:
+    nota_final = "F"
+
+
+print(notas)
+print("La cantidad de ausentes es:", cantidad_ausentes)
+print("El promedio de las notas es", promedio)
+print("El resultado final de la clase es:", nota_final)
 
 # Utilice la nota promedio calculada y transformela
 # a calificación con letras, imprima en pantalla el resultado

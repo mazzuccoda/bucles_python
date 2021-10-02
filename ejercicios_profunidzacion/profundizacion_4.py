@@ -43,13 +43,46 @@ durante la clase (ejemplos_clase/ejemplo_5.py)
 print("Mi primer pasito en data analytics")
 # Empezar aquí la resolución del ejercicio
 
-temperatura_max = None      # Aquí debe ir almacenando la temp máxima
+temperatura_max = 0      # Aquí debe ir almacenando la temp máxima
 temperatura_min = None      # Aquí debe ir almacenando la temp mínima
 temperatura_sumatoria = 0   # Aquí debe ir almacenando la suma de todas las temp
 temperatura_promedio = 0    # Al finalizar el loop deberá aquí alamcenar el promedio
 temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la lista
 
 # Colocar el bucle aqui......
+for x in temp_dataloger:
+    temperatura_len += 1
+    temperatura_sumatoria += x
+
+    if (temperatura_max is None) or x > temperatura_max:
+        temperatura_max = x
+
+    if  (temperatura_min is None) or x < temperatura_min:
+        temperatura_min = x
+
+print("La temperatura maxima es:", temperatura_max)
+print("La temperatura minimna es:", temperatura_min)
+
+print("##########################################################")
+print("El calculo con la función max es", max(temp_dataloger))
+if max(temp_dataloger) == temperatura_max:
+    print ("El resultado es el mismo")
+else:
+    print ("El resultado es diferente")
+
+print("##########################################################")
+print("El calculo con la función min es", min(temp_dataloger))
+if min(temp_dataloger) == temperatura_min:
+    print ("El resultado es el mismo")
+else:
+    print ("El resultado es diferente")
+
+print("##########################################################")
+print("El calculo con la función suma es", sum(temp_dataloger))
+if sum(temp_dataloger) == temperatura_sumatoria:
+    print ("El resultado es el mismo")
+else:
+    print ("El resultado es diferente")
 
 # Al finalizar el bucle compare si el valor que usted calculó para
 # temperatura_max y temperatura_min coincide con el que podría calcular
@@ -58,7 +91,10 @@ temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la
 # función "min" --> https://www.w3schools.com/python/ref_func_min.asp
 
 # Al finalizar el bucle debe calcular el promedio como:
-# temperatura_promedio = temperatura_sumatoria / cantidad_temperatuas
+print("##########################################################")
+temperatura_promedio = temperatura_sumatoria / temperatura_len
+print ("El promedio de temperaturas es:", temperatura_promedio)
+
 
 # Corroboren los resultados de temperatura_sumatoria
 # usando la función "sum"
@@ -83,3 +119,15 @@ https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-dur
 # ¿En qué época del año nos encontramos?
 # Imprima el resultado en pantalla
 # Debe utilizar temperatura_max y temperatura_min para definirlo
+print("##########################################################")
+print("En que epoca nos encontramos???")
+if temperatura_min >= 19 and  temperatura_max <= 28: 
+    print("Primavera")
+elif temperatura_min >= 11 and  temperatura_max <= 20: 
+    print("Otoño")
+elif temperatura_min >= 8 and  temperatura_max <= 14: 
+    print("Invierno")
+elif temperatura_min >= 10 and  temperatura_max <= 24: 
+    print("Primavera")
+
+print("##########################################################")
